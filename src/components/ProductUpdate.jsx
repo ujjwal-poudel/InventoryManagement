@@ -53,6 +53,7 @@ const ProductForm = () => {
         }
     };
 
+<<<<<<< HEAD
     return (
         <div style={{ maxWidth: '500px', margin: '0 auto', padding: '15px', border: '1px solid #ddd', borderRadius: '5px' }}>
             <h1 style={{ fontSize: '30px'}}>Product Update form</h1>
@@ -115,6 +116,31 @@ const ProductForm = () => {
                     </pre>
                 </div>
             )}
+=======
+    try {
+      const res = await fetch('http://ujjwal-oracle.onrender.com/createtables/', 
+        {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
+      
+      const result = await res.json();
+      setResponse(JSON.stringify(result, null, 2)); // Pretty-print the JSON response
+      setError('');
+    } catch (err) {
+      setError(err.message);
+      setResponse('');
+    }
+  };
+>>>>>>> f5096dd337ee5965c699d76eb5f02d6a752649f7
 
         </div>
     );
