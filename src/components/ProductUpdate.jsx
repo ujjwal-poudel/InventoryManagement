@@ -29,8 +29,10 @@ const ProductForm = () => {
     };
 
     try {
-      const res = await fetch('http://ujjwal-oracle.onrender.com/createtables/', {
+      const res = await fetch('http://ujjwal-oracle.onrender.com/createtables/', 
+        {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
